@@ -1,0 +1,40 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %> <% if (messages.error) { %>
+<p style="color: red"><%- messages.error %></p>
+<% } %> <% if (messages.success) { %>
+<p style="color: green"><%- messages.success %></p>
+<% } %>
+
+<a class="btn btn-success m-3" href="/skala/add">Add New skala</a>
+<br />
+
+<table class="table table-dark table-striped m-3" width="80%" border="0">
+  <tr style="text-align: left; background-color: #ccc">
+    <th>Nama Skala</th>
+    <th>Value</th>
+    <th>Action</th>
+  </tr>
+
+  <% if (data) { %> <% data.forEach(function(skala){ %>
+  <tr>
+    <td><%= skala.nm_skala %></td>
+    <td><%= skala.value %></td>
+    <td>
+      <div style="float: left">
+        <a class="btn btn-primary" href="/skala/edit/<%= skala.id_skala %>">Edit</a> &nbsp;
+        <form method="post" action="/skala/delete/<%= skala.id_skala %>" style="float: right">
+          <input class="btn btn-danger" type="submit" name="delete" value="Delete" onClick="return confirm('Are you sure you want to delete?')" />
+          <input type="hidden" name="_method" value="DELETE" />
+        </form>
+      </div>
+    </td>
+  </tr>
+  <% }) %> <% } %>
+</table>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

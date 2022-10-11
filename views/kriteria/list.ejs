@@ -1,0 +1,40 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %> <% if (messages.error) { %>
+<p style="color: red"><%- messages.error %></p>
+<% } %> <% if (messages.success) { %>
+<p style="color: green"><%- messages.success %></p>
+<% } %>
+
+<a class="btn btn-success m-3" href="/kriteria/add">Add New Kriteria</a>
+<br />
+
+<table class="table table-dark table-striped m-3" width="80%" border="0">
+  <tr style="text-align: left; background-color: #ccc">
+    <th>Nama Kriteria</th>
+    <th>Jenis</th>
+    <th>Action</th>
+  </tr>
+
+  <% if (data) { %> <% data.forEach(function(kriteria){ %>
+  <tr>
+    <td><%= kriteria.nm_kriteria %></td>
+    <td><%= kriteria.jenis %></td>
+    <td>
+      <div style="float: left">
+        <a class="btn btn-primary" href="/kriteria/edit/<%= kriteria.id_kriteria %>">Edit</a> &nbsp;
+        <form method="post" action="/kriteria/delete/<%= kriteria.id_kriteria %>" style="float: right">
+          <input class="btn btn-danger" type="submit" name="delete" value="Delete" onClick="return confirm('Are you sure you want to delete?')" />
+          <input type="hidden" name="_method" value="DELETE" />
+        </form>
+      </div>
+    </td>
+  </tr>
+  <% }) %> <% } %>
+</table>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

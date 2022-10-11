@@ -1,0 +1,34 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %> <% if (messages.error) { %>
+<p style="color: red"><%- messages.error %></p>
+<% } %> <% if (messages.success) { %>
+<p style="color: green"><%- messages.success %></p>
+<% } %>
+
+<form action="/matrix/add" method="post" name="form1">
+  <table width="25%" border="0">
+    <tr>
+      <td>ID Alternatif</td>
+      <td><input type="number" name="id_alternatif" id="id_alternatif" value="<%= id_alternatif %>" /></td>
+    </tr>
+    <tr>
+      <td>ID Bobot</td>
+      <td><input type="number" name="id_bobot" value="<%= id_bobot %>" /></td>
+    </tr>
+    <tr>
+      <td>ID_Skala</td>
+      <td><input type="number" name="id_skala" value="<%= id_skala %>" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" name="Submit" value="Add" /></td>
+    </tr>
+  </table>
+</form>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

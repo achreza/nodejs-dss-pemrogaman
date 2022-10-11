@@ -1,0 +1,40 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %> <% if (messages.error) { %>
+<p style="color: red"><%- messages.error %></p>
+<% } %> <% if (messages.success) { %>
+<p style="color: green"><%- messages.success %></p>
+<% } %>
+
+<a class="btn btn-success m-3" href="/bobot/add">Add New bobot</a>
+<br />
+
+<table class="table table-dark table-striped m-3" width="80%" border="0">
+  <tr style="text-align: left; background-color: #ccc">
+    <th>ID Kriteria</th>
+    <th>Value</th>
+    <th>Action</th>
+  </tr>
+
+  <% if (data) { %> <% data.forEach(function(bobot){ %>
+  <tr>
+    <td><%= bobot.id_kriteria %></td>
+    <td><%= bobot.value %></td>
+    <td>
+      <div style="float: left">
+        <a class="btn btn-primary" href="/bobot/edit/<%= bobot.id_bobot %>">Edit</a> &nbsp;
+        <form method="post" action="/bobot/delete/<%= bobot.id_bobot %>" style="float: right">
+          <input class="btn btn-danger" type="submit" name="delete" value="Delete" onClick="return confirm('Are you sure you want to delete?')" />
+          <input type="hidden" name="_method" value="DELETE" />
+        </form>
+      </div>
+    </td>
+  </tr>
+  <% }) %> <% } %>
+</table>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
