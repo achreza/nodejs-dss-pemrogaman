@@ -1,22 +1,15 @@
-Node.js, Express & MySQL: Simple Add, Edit, Delete, View (CRUD)
-========
+file node_module sudah dihilangkan karena file terlalu besar,
 
-A simple and basic CRUD application (Create, Read, Update, Delete) using Node.js, Express, MySQL & EJS Templating Engine.
+memunculkan node module dengan cara
+di terminal ketik :
 
-**Blog:** [Node.js, Express & MySQL: Simple Add, Edit, Delete, View (CRUD)](http://blog.chapagain.com.np/node-js-express-mysql-simple-add-edit-delete-view-crud/)
+npm init
 
-**Creating database and table**
+npm i express
+npm i ejs
+npm i body-parser
+npm i bootstrap
 
-```
-create database test;
+-- Lalu untuk run aplikasi dengan
 
-use test;
-
-CREATE TABLE users (
-id int(11) NOT NULL auto_increment,
-name varchar(100) NOT NULL,
-age int(3) NOT NULL,
-email varchar(100) NOT NULL,
-PRIMARY KEY (id)
-);
-```
+node app.js

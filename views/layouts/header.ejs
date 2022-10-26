@@ -27,8 +27,28 @@
             <div class="navbar-nav">
               <a class="nav-link" href="/kriteria">Kriteria List</a>  <a class="nav-link" href="/alternatif">Alternatif List</a> 
               <a class="nav-link" href="/bobot">Bobot List</a>  <a class="nav-link" href="/skala">Skala List</a> 
-              <a class="nav-link" href="/matrix">Matrix List</a>  <a class="nav-link" href="/vmatrix">View Matrix Keputusan</a> 
-              <a class="nav-link" href="/vnormalisasi">View Normalisasi</a>  <a class="nav-link" href="/vrangking">View Rangking</a> 
+              <a class="nav-link" href="/matrix">Matrix List</a>  
+              <div class="dropdown me-2 ms-1">
+                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Metode SAW
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="/vmatrix">View Matrix Keputusan</a> </li>
+                  <li><a class="dropdown-item" href="/vnormalisasi">View Normalisasi</a> </li>
+                  <li><a class="dropdown-item" href="/vrangking">View Rangking</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Metode WP
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="/wp_nilais">Nilai S</a> </li>
+                  <li><a class="dropdown-item" href="/wp_nilaiv">Nilai V</a> </li>
+                  <li><a class="dropdown-item" href="/wp_normalisasiterbobot">Normalisasi terbobot</a></li>
+                  <li><a class="dropdown-item" href="/wp_pangkat">WP Pangkat</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -27,6 +27,10 @@ var matrix = require("./routes/matrix");
 var vmatrix = require("./routes/vmatrix");
 var vnormalisasi = require("./routes/vnormalisasi");
 var vrangking = require("./routes/vrangking");
+var wp_nilais = require("./routes/wp_nilais");
+var wp_nilaiv = require("./routes/wp_nilaiv");
+var wp_normalisasiterbobot = require("./routes/wp_normalisasiterbobot");
+var wp_pangkat = require("./routes/wp_pangkat");
 
 var expressValidator = require("express-validator");
 app.use(expressValidator());
@@ -73,6 +77,10 @@ app.use("/matrix", matrix);
 app.use("/vmatrix", vmatrix);
 app.use("/vnormalisasi", vnormalisasi);
 app.use("/vrangking", vrangking);
+app.use("/wp_nilais", wp_nilais);
+app.use("/wp_nilaiv", wp_nilaiv);
+app.use("/wp_normalisasiterbobot", wp_normalisasiterbobot);
+app.use("/wp_pangkat", wp_pangkat);
 
 app.listen(3000, function () {
   console.log("Server running at port 3000: http://127.0.0.1:3000");
