@@ -31,6 +31,12 @@ var wp_nilais = require("./routes/wp_nilais");
 var wp_nilaiv = require("./routes/wp_nilaiv");
 var wp_normalisasiterbobot = require("./routes/wp_normalisasiterbobot");
 var wp_pangkat = require("./routes/wp_pangkat");
+var topsis_maxmin = require("./routes/topsis_maxmin");
+var topsis_normalisasi = require("./routes/topsis_normalisasi");
+var topsis_nilaiv = require("./routes/topsis_nilaiv");
+var topsis_pembagi = require("./routes/topsis_pembagi");
+var topsis_sipsin = require("./routes/topsis_sipsin");
+var topsis_terbobot = require("./routes/topsis_terbobot");
 
 var expressValidator = require("express-validator");
 app.use(expressValidator());
@@ -81,6 +87,12 @@ app.use("/wp_nilais", wp_nilais);
 app.use("/wp_nilaiv", wp_nilaiv);
 app.use("/wp_normalisasiterbobot", wp_normalisasiterbobot);
 app.use("/wp_pangkat", wp_pangkat);
+app.use("/topsis_maxmin", topsis_maxmin);
+app.use("/topsis_normalisasi", topsis_normalisasi);
+app.use("/topsis_nilaiv", topsis_nilaiv);
+app.use("/topsis_pembagi", topsis_pembagi);
+app.use("/topsis_sipsin", topsis_sipsin);
+app.use("/topsis_terbobot", topsis_terbobot);
 
 app.listen(3000, function () {
   console.log("Server running at port 3000: http://127.0.0.1:3000");
