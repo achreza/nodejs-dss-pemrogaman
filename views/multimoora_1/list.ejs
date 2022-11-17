@@ -1,0 +1,45 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %> <% if (messages.error) { %>
+<p style="color: red"><%- messages.error %></p>
+<% } %> <% if (messages.success) { %>
+<p style="color: green"><%- messages.success %></p>
+<% } %>
+
+<table class="table table-dark table-striped m-3" width="80%" border="0">
+  <tr style="text-align: left; background-color: #ccc">
+    <th>ID Matrix</th>
+    <th>ID Alternatif</th>
+    <th>Nama Alternatif</th>
+    <th>ID Kriteria</th>
+    <th>Nama Kriteria</th>
+    <th>Jenis</th>
+    <th>ID Bobot</th>
+    <th>value</th>
+    <th>Nilai</th>
+    <th>Nama Skala</th>
+    <th>Pra Normalisasi</th>
+  </tr>
+
+  <% if (data) { %> <% data.forEach(function(vmatrix){ %>
+  <tr>
+    <td><%= vmatrix.id_matrix %></td>
+    <td><%= vmatrix.idalternatif %></td>
+    <td><%= vmatrix.nmalternatif %></td>
+    <td><%= vmatrix.id_kriteria %></td>
+    <td><%= vmatrix.nm_kriteria %></td>
+    <td><%= vmatrix.jenis %></td>
+    <td><%= vmatrix.id_bobot %></td>
+    <td><%= vmatrix.value %></td>
+    <td><%= vmatrix.nilai %></td>
+    <td><%= vmatrix.nm_skala %></td>
+    <td><%= vmatrix.pra %></td>
+  </tr>
+  <% }) %> <% } %>
+</table>
+
+<!--
+    including footer content which is common for all pages
+    -->
+<%- include ../layouts/footer.ejs %>

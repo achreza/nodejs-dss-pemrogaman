@@ -37,6 +37,10 @@ var topsis_nilaiv = require("./routes/topsis_nilaiv");
 var topsis_pembagi = require("./routes/topsis_pembagi");
 var topsis_sipsin = require("./routes/topsis_sipsin");
 var topsis_terbobot = require("./routes/topsis_terbobot");
+var multimoora_1 = require("./routes/multimoora_1");
+var multimoora_2 = require("./routes/multimoora_2");
+var multimoora_3 = require("./routes/multimoora_3");
+var multimoora_4 = require("./routes/multimoora_4");
 
 var expressValidator = require("express-validator");
 app.use(expressValidator());
@@ -93,6 +97,10 @@ app.use("/topsis_nilaiv", topsis_nilaiv);
 app.use("/topsis_pembagi", topsis_pembagi);
 app.use("/topsis_sipsin", topsis_sipsin);
 app.use("/topsis_terbobot", topsis_terbobot);
+app.use("/multimoora_1", multimoora_1);
+app.use("/multimoora_2", multimoora_2);
+app.use("/multimoora_3", multimoora_3);
+app.use("/multimoora_4", multimoora_4);
 
 app.listen(3000, function () {
   console.log("Server running at port 3000: http://127.0.0.1:3000");
